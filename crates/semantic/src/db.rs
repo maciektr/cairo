@@ -604,7 +604,7 @@ fn map_diagnostics(
         assert_eq!(diag.stable_location.module_file_id.0, module_id, "Unexpected module id.");
         let file_index = diag.stable_location.module_file_id.1;
         if let Some(file_info) = &generated_file_info[file_index.0] {
-            if let Some(plugin_diag) = file_info.diagnostic_mapper.map_diag(db, diag) {
+            if let Some(plugin_diag) = file_info.diagnostic_mapper.map_diag(&db, diag) {
                 // We don't have a real location, so we give a dummy location in the correct file.
                 // SemanticDiagnostic struct knowns to give the proper span for
                 // WrappedPluginDiagnostic.

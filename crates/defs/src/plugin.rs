@@ -8,12 +8,10 @@ use syntax::node::ast;
 use syntax::node::db::SyntaxGroup;
 use syntax::node::ids::SyntaxStablePtrId;
 
-use crate::db::DefsGroup;
-
 /// A trait for mapping plugin generated diagnostics to more readable diagnostics.
 pub trait DiagnosticMapper: std::fmt::Debug + Sync + Send {
     fn as_any(&self) -> &dyn Any;
-    fn map_diag(&self, db: &dyn DefsGroup, diag: &dyn Any) -> Option<PluginMappedDiagnostic>;
+    fn map_diag(&self, db: &dyn Any, diag: &dyn Any) -> Option<PluginMappedDiagnostic>;
     fn eq(&self, other: &dyn DiagnosticMapper) -> bool;
 }
 
@@ -48,7 +46,7 @@ impl DiagnosticMapper for TrivialMapper {
 
     fn map_diag(
         &self,
-        _db: &dyn DefsGroup,
+        _db: &dyn std::any::Any,
         _diag: &dyn std::any::Any,
     ) -> Option<PluginMappedDiagnostic> {
         None
