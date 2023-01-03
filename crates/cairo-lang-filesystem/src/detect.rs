@@ -31,5 +31,23 @@ pub fn detect_corelib() -> PathBuf {
             return dir;
         }
     }
+
+    {
+        let mut dir = PathBuf::from(file!());
+        dir.pop();
+        dir.pop();
+        dir.pop();
+        dir.push("corelib");
+        if dir.exists() {
+            return dir;
+        }
+        dir.pop();
+        dir.pop();
+        dir.push("corelib");
+        if dir.exists() {
+            return dir;
+        }
+    }
+
     panic!("Corelib not found.")
 }
