@@ -25,7 +25,6 @@ mod HelloStarknet {
 //! > generated_cairo_code
 #[generated_contract]
 mod HelloStarknet {
-    struct Storage { balance: felt, }
 
     // Increases the balance by the given amount.
     #[external]
@@ -77,6 +76,7 @@ mod HelloStarknet {
     trait __abi {
         fn increase_balance(amount: felt);
         fn get_balance() -> felt;
+        
         
     }
 
@@ -141,6 +141,7 @@ mod HelloStarknet {
             serde::serialize_felt(arr, res)
             arr
         }
+        
         
     }
 }

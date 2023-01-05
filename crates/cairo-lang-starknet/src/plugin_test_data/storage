@@ -17,11 +17,6 @@ mod TestContract {
 //! > generated_cairo_code
 #[generated_contract]
 mod TestContract {
-    struct Storage {
-        var_felt: felt,
-        var_u128: u128,
-        var_bool: bool,
-    }
 
     
     mod var_felt {
@@ -125,9 +120,11 @@ mod TestContract {
     }
     trait __abi {
         
+        
     }
 
     mod __external {
+        
         
     }
 }
