@@ -66,6 +66,7 @@ pub fn update_crate_roots_from_project_config(db: &mut dyn SemanticGroup, config
             path = PathBuf::from(&config.base_path).join(path);
         }
         let root = Directory(path);
+        eprintln!("Crate root: {:?} -> {:?}", crate_id, root);
         db.set_crate_root(crate_id, Some(root));
     }
 }

@@ -1,0 +1,13 @@
+[package]
+name = "with_quaireaux"
+version = "0.1.0"
+
+[dependencies]
+# quaireaux = { path = "/Users/maciektr/Library/Caches/com.swmansion.scarb/registry/git/checkouts/quaireaux-I8UTN6GUOAHIC/041379c" }
+quaireaux = { git = "https://github.com/keep-starknet-strange/quaireaux.git" }
+
+# /Users/maciektr/Projects/cairo/target/release/cairo-language-server
+[lib]
+casm = true
+
+

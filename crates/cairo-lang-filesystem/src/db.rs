@@ -53,6 +53,7 @@ pub fn init_files_group(db: &mut (dyn FilesGroup + 'static)) {
 pub fn init_dev_corelib(db: &mut (dyn FilesGroup + 'static), path: PathBuf) {
     let core_crate = db.intern_crate(CrateLongId(CORELIB_CRATE_NAME.into()));
     let core_root_dir = Directory(path);
+    eprintln!("Dev corelib {:?} {:?}", core_crate, core_root_dir);
     db.set_crate_root(core_crate, Some(core_root_dir));
 }
 
