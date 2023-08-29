@@ -342,7 +342,7 @@ pub fn run_tests(
 }
 
 /// Finds the tests in the requested crates.
-fn find_all_tests(
+pub fn find_all_tests(
     db: &dyn SemanticGroup,
     main_crates: Vec<CrateId>,
 ) -> Vec<(FreeFunctionId, TestConfig)> {
