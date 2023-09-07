@@ -290,7 +290,7 @@ fn get_submodule_id(
 }
 
 /// Sierra information of a contract.
-#[derive(Clone, Deserialize)]
+#[derive(Clone, Deserialize, PartialEq, Debug)]
 #[serde(from = "IntermediateContractInfo")]
 pub struct ContractInfo {
     /// Sierra function of the constructor.
