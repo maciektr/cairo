@@ -100,7 +100,7 @@ quote = "1.0.33"
 rayon = "1.8.0"
 rstest = "0.18.2"
 salsa = "0.16.1"
-scarb-metadata = "1"
+scarb-metadata = { git = "https://github.com/software-mansion/scarb.git", branch = "maciektr/dep_kind" }
 schemars = { version = "0.8.15", features = ["preserve_order"] }
 serde = { version = "1.0.192", features = ["derive"] }
 serde_json = "1.0"
